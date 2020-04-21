@@ -60,11 +60,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Count\CountType.cs" />
+    <Compile Include="ViewModel\AllCountsVM.cs" />
     <Compile Include="ViewModel\BaseVM.cs" />
-    <Compile Include="ViewModel\Counts\CreateNewCountFirstStepVM.cs" />
+    <Compile Include="ViewModel\Counts\CreateNewCountVM.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
-    <Compile Include="ViewModel\Navigation.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -75,11 +75,8 @@
     <Compile Include="View\UserControls\AllCountsUC.xaml.cs">
       <DependentUpon>AllCountsUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\CreateNewCountSteps\CreateNewCountFirstStepUC.xaml.cs">
-      <DependentUpon>CreateNewCountFirstStepUC.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserControls\CreateNewCountSteps\CreateNewCountSecondStepUC.xaml.cs">
-      <DependentUpon>CreateNewCountSecondStepUC.xaml</DependentUpon>
+    <Compile Include="View\UserControls\CreateNewCountSteps\CreateNewCountUC.xaml.cs">
+      <DependentUpon>CreateNewCountUC.xaml</DependentUpon>
     </Compile>
     <Page Include="View\MainWindow.xaml">
       <SubType>Designer</SubType>
@@ -89,11 +86,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UserControls\CreateNewCountSteps\CreateNewCountFirstStepUC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UserControls\CreateNewCountSteps\CreateNewCountSecondStepUC.xaml">
+    <Page Include="View\UserControls\CreateNewCountSteps\CreateNewCountUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,5 +134,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

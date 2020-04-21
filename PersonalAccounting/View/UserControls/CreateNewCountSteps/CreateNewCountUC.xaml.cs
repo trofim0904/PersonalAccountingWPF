@@ -18,9 +18,9 @@ namespace PersonalAccounting.View.UserControls.CreateNewCountSteps
     /// <summary>
     /// Логика взаимодействия для CreateNewCountFirstStepUC.xaml
     /// </summary>
-    public partial class CreateNewCountFirstStepUC : UserControl
+    public partial class CreateNewCountUC : UserControl
     {
-        public CreateNewCountFirstStepUC()
+        public CreateNewCountUC()
         {
             InitializeComponent();
         }

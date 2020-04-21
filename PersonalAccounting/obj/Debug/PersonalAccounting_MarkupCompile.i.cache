@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\App.xaml
-4187730141
+31843707306
 
-15-1987216360
+141792461008
 15151730318
-View\MainWindow.xaml;View\UserControls\AllCountsUC.xaml;View\UserControls\CreateNewCountSteps\CreateNewCountFirstStepUC.xaml;View\UserControls\CreateNewCountSteps\CreateNewCountSecondStepUC.xaml;
+View\MainWindow.xaml;View\UserControls\AllCountsUC.xaml;View\UserControls\CreateNewCountSteps\CreateNewCountUC.xaml;
 
-False
+True
 

@@ -117,8 +117,7 @@
             </Grid>
             
             <Grid Grid.Column="1">
-                <Frame Content="{Binding Path=Frame}" 
-                       Name="_allcounts"
+                <Frame Content="{Binding Path=SelectedViewModel}" 
                        NavigationUIVisibility="Hidden"/>
 
             </Grid>

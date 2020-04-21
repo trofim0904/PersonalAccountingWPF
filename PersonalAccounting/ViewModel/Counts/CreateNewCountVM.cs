@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace PersonalAccounting.ViewModel.Counts
 {
-    public class CreateNewCountFirstStepVM : BaseVM
+    public class CreateNewCountVM : BaseVM
     {
         private ObservableCollection<CountType> _types;
         public ObservableCollection<CountType> Types
@@ -35,37 +35,63 @@ namespace PersonalAccounting.ViewModel.Counts
                 OnPropertyChanged("CountType");
             }
         }
-        
-        public ICommand NextCommand { get; private set; }
-        public ICommand BackToAllCountsCommand { get; private set; }
 
-
-
-        public CreateNewCountFirstStepVM()
+        private bool _secondPartEnable;
+        public bool SecondPartEnable
         {
+            get => _secondPartEnable;
+            set
+            {
+                _secondPartEnable = value;
+                OnPropertyChanged("SecondPartEnable");
+            }
+        }
+        private float _secondPartOpacity;
+        public float SecondPartOpacity
+        {
+            get => _secondPartOpacity;
+            set
+            {
+                _secondPartOpacity = value;
+                OnPropertyChanged("SecondPartOpacity");
+            }
+        }
 
+      
+
+        public ICommand SelectTypeCommand { get; private set; }
+
+        public CreateNewCountVM()
+        {
+           
+
+            SecondPartEnable = false;
+            SecondPartOpacity = 0;
             Types = new ObservableCollection<CountType>()
             {
                 new CountType() { Id=1, Name="Наличные деньги" },
                 new CountType() { Id=2, Name="Кредит" },
                 new CountType() { Id=3, Name="Депозит" }
             };
-            NextCommand = new DelegateCommand(NextStep);
-            
-            
+
+
+            SelectTypeCommand = new DelegateCommand(SelectType);
         }
 
-        
-
-        private void NextStep(object obj)
+        private void SelectType(object obj)
         {
-            
-            MessageBox.Show(CountType.Name);
-            //TODO:
-            //Go to another page 
-            //Create normal navigation between pages
-            //STATE PATERN
+            if (CountType == null)
+                return;
 
+            if (CountType.Id == 1)
+            {
+                //TODO
+                
+            }
+            SecondPartEnable = true;
+            SecondPartOpacity = 1;
         }
+
     }
+    
 }

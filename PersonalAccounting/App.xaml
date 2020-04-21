@@ -2,8 +2,21 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:PersonalAccounting"
+             xmlns:mainviews="clr-namespace:PersonalAccounting.View"
+             xmlns:ucviews="clr-namespace:PersonalAccounting.View.UserControls"
+             xmlns:countviews="clr-namespace:PersonalAccounting.View.UserControls.CreateNewCountSteps"
+             xmlns:viewmodels="clr-namespace:PersonalAccounting.ViewModel"
+             xmlns:countviewmodels="clr-namespace:PersonalAccounting.ViewModel.Counts"
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-         
+        <DataTemplate DataType="{x:Type viewmodels:AllCountsVM}">
+            <ucviews:AllCountsUC/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type countviewmodels:CreateNewCountVM}">
+            <countviews:CreateNewCountUC/>
+        </DataTemplate>
+
+        
     </Application.Resources>
 </Application>

@@ -15,5 +15,16 @@ namespace PersonalAccounting.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        private BaseVM _selectedViewModel;
+        public BaseVM SelectedViewModel
+        {
+            get => _selectedViewModel;
+            set
+            {
+                _selectedViewModel = value;
+                OnPropertyChanged("SelectedViewModel");
+            }
+        }
     }
 }
