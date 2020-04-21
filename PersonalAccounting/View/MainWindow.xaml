@@ -15,17 +15,20 @@
         <vm:MainWindowVM/>
     </Window.DataContext>
     <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+        
         <Style x:Key="_textmenu" TargetType="TextBlock">
             <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Background" Value="White"/>
+            <Setter Property="Background" Value="#34495e"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Margin" Value="0 0 30 0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="15 0 15 0"/>
         </Style>
         
         <Style x:Key="_menubuttons" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="Margin" Value="0 0 30 0"/>
+            <Setter Property="Background" Value="#34495e"/>
+            <Setter Property="Margin" Value="15 0 15 0"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -44,18 +47,30 @@
 
         <Style x:Key="_rightmenubuttons" TargetType="TextBlock">
             <Setter Property="FontSize" Value="15"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#8e44ad"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </Window.Resources>
+
+    
     <Grid>
+        
+        
         <Grid.RowDefinitions>
+            
             <RowDefinition Height="100"/>
             <RowDefinition/>
+           
         </Grid.RowDefinitions>
         
-        <Border BorderThickness="1"
-                    BorderBrush="#bdc3c7"
-                    Grid.Row="0"/>
-        <Grid Grid.Row="0">
+        
+        
+        
+        <Grid Grid.Row="0"
+              Background="#34495e">
             
             <StackPanel Orientation="Horizontal"
                         Margin="10"
@@ -63,7 +78,9 @@
                 <StackPanel>
                     <Button Width="60" 
                             Style="{StaticResource _menubuttons}"
-                            Command="{Binding Path=CountPageCommand}">
+                            Command="{Binding Path=CountPageCommand}"
+                            IsEnabled="{Binding WindowWorkSpaceIsEnable}"
+                            Opacity="{Binding WindowWorkSpaceOpacity}">
                         <Image Source="/Resources/counts.png"
                                Margin="5"/>
                     </Button>
@@ -73,7 +90,19 @@
                 <StackPanel>
                     <Button Width="60" 
                             Style="{StaticResource _menubuttons}"
+                            Command="{Binding Path=LockWindowCommand}">
+                        <Image Source="/Resources/lock.png"
+                               Margin="5"/>
+                    </Button>
+                    <TextBlock Style="{StaticResource _textmenu}"
+                               >Заблок.</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <Button Width="60" 
+                            Style="{StaticResource _menubuttons}"
                             Command="{Binding Path=CloseAppCommand}"
+                            IsEnabled="{Binding WindowWorkSpaceIsEnable}"
+                            Opacity="{Binding WindowWorkSpaceOpacity}"
                             CommandParameter="{Binding ElementName=MainW}">
                         <Image Source="/Resources/close.png"
                                Margin="5"/>
@@ -83,7 +112,11 @@
 
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1"
+              IsEnabled="{Binding WindowWorkSpaceIsEnable}"
+              Opacity="{Binding WindowWorkSpaceOpacity}">
+
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
@@ -103,7 +136,7 @@
                         </TextBlock.InputBindings>
                     </TextBlock>
                     <TextBlock Style="{StaticResource _rightmenubuttons}"
-                               Text="Отмена"
+                               Text="Закрыть"
                                Foreground="#e74c3c"
                                
                                Opacity="{Binding Path=CancelButtonVisibility}">
@@ -111,8 +144,7 @@
                             <MouseBinding Gesture="LeftClick" Command="{Binding Path=BackToAllCountsCommand}"/>
                         </TextBlock.InputBindings>
                     </TextBlock>
-                    <Image gif:ImageBehavior.AnimatedSource="/Resources/gf.gif"
-                           Margin="0 95 10 0"/>
+                    
                 </StackPanel>
             </Grid>
             
@@ -121,7 +153,17 @@
                        NavigationUIVisibility="Hidden"/>
 
             </Grid>
-            
+            <Grid Grid.Column="0" 
+              Grid.Row="0" 
+              Grid.RowSpan="2" 
+              Grid.ColumnSpan="2"
+              Panel.ZIndex="2">
+                <Image Source="/Resources/lock.png"
+                       Margin="5"
+                       Width="200"
+                       Visibility="{Binding Path=LockImgVisibility, Converter={StaticResource BoolToVisConverter}}"/>
+            </Grid>
+
         </Grid>
         
     </Grid>

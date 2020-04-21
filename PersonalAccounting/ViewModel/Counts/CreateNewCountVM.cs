@@ -1,12 +1,8 @@
-﻿using PersonalAccounting.Model.Count;
+﻿using PersonalAccounting.Model.Counts;
+using PersonalAccounting.Model.Counts.CreateCount;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace PersonalAccounting.ViewModel.Counts
@@ -24,7 +20,18 @@ namespace PersonalAccounting.ViewModel.Counts
             }
 
         }
-        
+        private ObservableCollection<ValutaType> _valutatypes;
+        public ObservableCollection<ValutaType> ValutaTypes
+        {
+            get => _valutatypes;
+            set
+            {
+                _valutatypes = value;
+                OnPropertyChanged("ValutaTypes");
+            }
+
+        }
+
         private CountType _countType;
         public CountType CountType
         {
@@ -33,6 +40,17 @@ namespace PersonalAccounting.ViewModel.Counts
             {
                 _countType = value;
                 OnPropertyChanged("CountType");
+            }
+        }
+
+        private InputCountParametrs _inputParametrs;
+        public InputCountParametrs InputParametrs
+        {
+            get => _inputParametrs;
+            set
+            {
+                _inputParametrs = value;
+                OnPropertyChanged("InputParametrs");
             }
         }
 
@@ -60,36 +78,61 @@ namespace PersonalAccounting.ViewModel.Counts
       
 
         public ICommand SelectTypeCommand { get; private set; }
+        public ICommand CreateNewCountCommand { get; private set; }
 
         public CreateNewCountVM()
         {
-           
+            InputParametrs = new InputCountParametrs();
 
             SecondPartEnable = false;
             SecondPartOpacity = 0;
-            Types = new ObservableCollection<CountType>()
-            {
-                new CountType() { Id=1, Name="Наличные деньги" },
-                new CountType() { Id=2, Name="Кредит" },
-                new CountType() { Id=3, Name="Депозит" }
-            };
-
-
+            
+            Types = new ObservableCollection<CountType>(CountType.CountTypes);
+            ValutaTypes = new ObservableCollection<ValutaType>(ValutaType.ValutaTypes);
+            
+            CreateNewCountCommand = new DelegateCommand(CreateNewCount);
             SelectTypeCommand = new DelegateCommand(SelectType);
+        }
+
+        private void CreateNewCount(object obj)
+        {
+            if (Count.CreateAction(InputParametrs))
+            {
+                MessageBox.Show("Добавлено");
+                InputParametrs = new InputCountParametrs();
+            }
+            else
+            {
+                MessageBox.Show("Ошибка");
+            }
+
+
+
+            //MessageBox.Show(Convert.ToDateTime(InputParametrs.StartDate).ToString("dd.MM.yyyy"));
+        }
+
+        private CountViewParametrs _count;
+        public CountViewParametrs Count
+        {
+            get => _count;
+            set
+            {
+                _count = value;
+                OnPropertyChanged("Count");
+            }
         }
 
         private void SelectType(object obj)
         {
             if (CountType == null)
                 return;
-
-            if (CountType.Id == 1)
-            {
-                //TODO
-                
-            }
+            
             SecondPartEnable = true;
             SecondPartOpacity = 1;
+
+            Count = new CountViewParametrs(CountType.CountTypes[CountType.Id - 1].SelectedCount);
+            
+
         }
 
     }

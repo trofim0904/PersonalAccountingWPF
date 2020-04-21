@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:PersonalAccounting"
              xmlns:mainviews="clr-namespace:PersonalAccounting.View"
              xmlns:ucviews="clr-namespace:PersonalAccounting.View.UserControls"
-             xmlns:countviews="clr-namespace:PersonalAccounting.View.UserControls.CreateNewCountSteps"
+             xmlns:countviews="clr-namespace:PersonalAccounting.View.UserControls.Counts"
              xmlns:viewmodels="clr-namespace:PersonalAccounting.ViewModel"
              xmlns:countviewmodels="clr-namespace:PersonalAccounting.ViewModel.Counts"
              StartupUri="View/MainWindow.xaml">
@@ -17,6 +17,9 @@
             <countviews:CreateNewCountUC/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type countviewmodels:OneCountViewVM}">
+            <countviews:OneCountViewUC/>
+        </DataTemplate>
         
     </Application.Resources>
 </Application>

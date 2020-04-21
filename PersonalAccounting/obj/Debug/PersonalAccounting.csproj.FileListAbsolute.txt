@@ -21,5 +21,12 @@ E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\bin\Debug\W
 E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\PersonalAccounting.csproj.CopyComplete
 E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\GeneratedInternalTypeHelper.g.cs
 E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\App.baml
-E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\UserControls\CreateNewCountSteps\CreateNewCountUC.g.cs
-E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\UserControls\CreateNewCountSteps\CreateNewCountUC.baml
+E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\UserControls\Counts\CreateNewCountUC.g.cs
+E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\UserControls\Counts\CreateNewCountUC.baml
+E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\UserControls\Counts\OneCountViewUC.g.cs
+E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\UserControls\Counts\OneCountViewUC.baml
+E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\bin\Debug\DataLayer.dll
+E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\bin\Debug\DataLayer.pdb
+E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\bin\Debug\AutoMapper.dll
+E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\bin\Debug\AutoMapper.pdb
+E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\bin\Debug\AutoMapper.xml

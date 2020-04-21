@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -59,10 +62,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Count\CountType.cs" />
+    <Compile Include="Model\Counts\CountViewInList.cs" />
+    <Compile Include="Model\Counts\CreateCount\CashCount.cs" />
+    <Compile Include="Model\Counts\CreateCount\CountViewParametrs.cs" />
+    <Compile Include="Model\Counts\CreateCount\CreditCount.cs" />
+    <Compile Include="Model\Counts\CreateCount\DepositCount.cs" />
+    <Compile Include="Model\Counts\CreateCount\InputCountParametrs.cs" />
+    <Compile Include="Model\Counts\CreateCount\ISelectedCount.cs" />
+    <Compile Include="Model\Counts\CountType.cs" />
+    <Compile Include="Model\Counts\ValutaType.cs" />
+    <Compile Include="Model\WindowState\IWindowState.cs" />
+    <Compile Include="Model\WindowState\LockWindow.cs" />
+    <Compile Include="Model\WindowState\UnLockWindow.cs" />
+    <Compile Include="Model\WindowState\WindowContext.cs" />
     <Compile Include="ViewModel\AllCountsVM.cs" />
     <Compile Include="ViewModel\BaseVM.cs" />
     <Compile Include="ViewModel\Counts\CreateNewCountVM.cs" />
+    <Compile Include="ViewModel\Counts\OneCountViewVM.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
@@ -75,8 +91,11 @@
     <Compile Include="View\UserControls\AllCountsUC.xaml.cs">
       <DependentUpon>AllCountsUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\CreateNewCountSteps\CreateNewCountUC.xaml.cs">
+    <Compile Include="View\UserControls\Counts\CreateNewCountUC.xaml.cs">
       <DependentUpon>CreateNewCountUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Counts\OneCountViewUC.xaml.cs">
+      <DependentUpon>OneCountViewUC.xaml</DependentUpon>
     </Compile>
     <Page Include="View\MainWindow.xaml">
       <SubType>Designer</SubType>
@@ -86,7 +105,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UserControls\CreateNewCountSteps\CreateNewCountUC.xaml">
+    <Page Include="View\UserControls\Counts\CreateNewCountUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\Counts\OneCountViewUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,12 +148,28 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\gf.gif">
+    <Resource Include="Resources\counts.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\counts.png">
+    <Resource Include="Resources\add.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\details.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{ce4f39cd-36b3-42fc-9f9a-34343ab19c80}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lock.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

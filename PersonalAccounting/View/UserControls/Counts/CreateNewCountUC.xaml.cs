@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PersonalAccounting.View.UserControls.CreateNewCountSteps
+namespace PersonalAccounting.View.UserControls.Counts
 {
     /// <summary>
     /// Логика взаимодействия для CreateNewCountFirstStepUC.xaml

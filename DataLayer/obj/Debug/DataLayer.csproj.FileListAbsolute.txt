@@ -1,0 +1,6 @@
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\bin\Debug\DataLayer.dll
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\bin\Debug\DataLayer.pdb
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.dll
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.pdb
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache
