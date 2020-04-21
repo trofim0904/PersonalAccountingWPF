@@ -9,7 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using PersonalAccounting.View;
 using PersonalAccounting.View.UserControls;
+using PersonalAccounting.ViewModel;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -30,7 +32,6 @@ using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
-using WpfAnimatedGif;
 
 
 namespace PersonalAccounting.View.UserControls {
