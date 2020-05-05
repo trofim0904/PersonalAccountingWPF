@@ -10,19 +10,20 @@ namespace PersonalAccounting.Model.Counts.CreateCount
     {
         public bool CreateAction(InputCountParametrs inputCountParametrs)
         {
-            //TODO
-            //Mapper
+            ////TODO
+            ////Mapper
 
-            DataLayer.AccountingContext.CreditCounts.Add(new DataLayer.DataModels.CreditCount()
-            {
-                AmountOfMoney = inputCountParametrs.AmountOfMoney,
-                Comment = inputCountParametrs.Comment,
-                Name = inputCountParametrs.Name,
-                Valuta = inputCountParametrs.Valuta,
-                BankName = inputCountParametrs.BankName,
-                StartDate = Convert.ToDateTime(inputCountParametrs.StartDate).ToString("dd.MM.yyyy")
-            });
-            return true;
+            //DataLayer.AccountingContext.CreditCounts.Add(new DataLayer.DataModels.CreditCount()
+            //{
+            //    AmountOfMoney = inputCountParametrs.AmountOfMoney,
+            //    Comment = inputCountParametrs.Comment,
+            //    Name = inputCountParametrs.Name,
+            //    Valuta = inputCountParametrs.Valuta,
+            //    BankName = inputCountParametrs.BankName,
+            //    StartDate = Convert.ToDateTime(inputCountParametrs.StartDate).ToString("dd.MM.yyyy")
+            //});
+            //return true;
+            return false;
         }
 
         public string GetDataQuestion() => "Когда был взят кредит?";

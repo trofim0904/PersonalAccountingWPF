@@ -1,7 +1,11 @@
-﻿
+﻿E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\GeneratedInternalTypeHelper.g.cs
 FE:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\App.xaml;;
+FE:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\View\Login\LoginWindow.xaml;;
 FE:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\View\MainWindow.xaml;;
-FE:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\View\UserControls\AllCountsUC.xaml;;
-FE:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\View\UserControls\Counts\CreateNewCountUC.xaml;;
-FE:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\View\UserControls\Counts\OneCountViewUC.xaml;;
+FE:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\View\Counts\UserControls\AllCountsUC.xaml;;
+FE:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\View\Counts\UserControls\CreateNewCountUC.xaml;;
+FE:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\View\Counts\UserControls\OneCashCountViewUC.xaml;;
+FE:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\View\Login\UserControls\LoginInfoUC.xaml;;
+FE:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\View\Login\UserControls\LoginUC.xaml;;
+FE:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\View\Login\UserControls\RegistarationUC.xaml;;
 

@@ -3,23 +3,55 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:PersonalAccounting"
              xmlns:mainviews="clr-namespace:PersonalAccounting.View"
-             xmlns:ucviews="clr-namespace:PersonalAccounting.View.UserControls"
-             xmlns:countviews="clr-namespace:PersonalAccounting.View.UserControls.Counts"
+             xmlns:countviews="clr-namespace:PersonalAccounting.View.Counts.UserControls"
+             xmlns:loginviews="clr-namespace:PersonalAccounting.View.Login.UserControls"
              xmlns:viewmodels="clr-namespace:PersonalAccounting.ViewModel"
              xmlns:countviewmodels="clr-namespace:PersonalAccounting.ViewModel.Counts"
-             StartupUri="View/MainWindow.xaml">
+             xmlns:loginviewmodels="clr-namespace:PersonalAccounting.ViewModel.Login"
+             StartupUri="View/Login/LoginWindow.xaml">
     <Application.Resources>
         <DataTemplate DataType="{x:Type viewmodels:AllCountsVM}">
-            <ucviews:AllCountsUC/>
+            <countviews:AllCountsUC/>
         </DataTemplate>
-        
+
         <DataTemplate DataType="{x:Type countviewmodels:CreateNewCountVM}">
             <countviews:CreateNewCountUC/>
         </DataTemplate>
 
-        <DataTemplate DataType="{x:Type countviewmodels:OneCountViewVM}">
-            <countviews:OneCountViewUC/>
+        <DataTemplate DataType="{x:Type countviewmodels:OneCashCountViewVM}">
+            <countviews:OneCashCountViewUC/>
         </DataTemplate>
-        
+
+        <DataTemplate DataType="{x:Type loginviewmodels:LoginVM}">
+            <loginviews:LoginUC/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type loginviewmodels:RegistarationVM}">
+            <loginviews:RegistarationUC/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type loginviewmodels:LoginInfoVM}">
+            <loginviews:LoginInfoUC/>
+        </DataTemplate>
+
+        <Style x:Key="_imgbuttons" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#34495e"/>
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#2ecc71"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
     </Application.Resources>
 </Application>

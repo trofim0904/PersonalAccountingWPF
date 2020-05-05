@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -14,6 +15,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,7 +41,14 @@
     <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
@@ -62,25 +72,38 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Counts\CountViewInList.cs" />
+    <Compile Include="Model\Counts\CashCountLogic.cs" />
+    <Compile Include="Model\Counts\CashCountViewInList.cs" />
     <Compile Include="Model\Counts\CreateCount\CashCount.cs" />
+    <Compile Include="Model\Counts\CreateCount\CountDecorator.cs" />
     <Compile Include="Model\Counts\CreateCount\CountViewParametrs.cs" />
     <Compile Include="Model\Counts\CreateCount\CreditCount.cs" />
     <Compile Include="Model\Counts\CreateCount\DepositCount.cs" />
     <Compile Include="Model\Counts\CreateCount\InputCountParametrs.cs" />
-    <Compile Include="Model\Counts\CreateCount\ISelectedCount.cs" />
     <Compile Include="Model\Counts\CountType.cs" />
+    <Compile Include="Model\Counts\CreateCount\ISelectedCount.cs" />
     <Compile Include="Model\Counts\ValutaType.cs" />
+    <Compile Include="Model\Login\LoginLogic.cs" />
+    <Compile Include="Model\Login\LoginModel.cs" />
+    <Compile Include="Model\Login\RegistrationModel.cs" />
     <Compile Include="Model\WindowState\IWindowState.cs" />
     <Compile Include="Model\WindowState\LockWindow.cs" />
     <Compile Include="Model\WindowState\UnLockWindow.cs" />
     <Compile Include="Model\WindowState\WindowContext.cs" />
+    <Compile Include="MyUser.cs" />
     <Compile Include="ViewModel\AllCountsVM.cs" />
     <Compile Include="ViewModel\BaseVM.cs" />
     <Compile Include="ViewModel\Counts\CreateNewCountVM.cs" />
-    <Compile Include="ViewModel\Counts\OneCountViewVM.cs" />
+    <Compile Include="ViewModel\Counts\OneCashCountViewVM.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
+    <Compile Include="ViewModel\Login\LoginInfoVM.cs" />
+    <Compile Include="ViewModel\Login\LoginVM.cs" />
+    <Compile Include="ViewModel\Login\LoginWindowVM.cs" />
+    <Compile Include="ViewModel\Login\RegistarationVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
+    <Compile Include="View\Login\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -88,28 +111,53 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\UserControls\AllCountsUC.xaml.cs">
+    <Compile Include="View\Counts\UserControls\AllCountsUC.xaml.cs">
       <DependentUpon>AllCountsUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\Counts\CreateNewCountUC.xaml.cs">
+    <Compile Include="View\Counts\UserControls\CreateNewCountUC.xaml.cs">
       <DependentUpon>CreateNewCountUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\Counts\OneCountViewUC.xaml.cs">
-      <DependentUpon>OneCountViewUC.xaml</DependentUpon>
+    <Compile Include="View\Counts\UserControls\OneCashCountViewUC.xaml.cs">
+      <DependentUpon>OneCashCountViewUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Login\UserControls\LoginInfoUC.xaml.cs">
+      <DependentUpon>LoginInfoUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\UserControls\LoginUC.xaml.cs">
+      <DependentUpon>LoginUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\UserControls\RegistarationUC.xaml.cs">
+      <DependentUpon>RegistarationUC.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\Login\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UserControls\AllCountsUC.xaml">
+    <Page Include="View\Counts\UserControls\AllCountsUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UserControls\Counts\CreateNewCountUC.xaml">
+    <Page Include="View\Counts\UserControls\CreateNewCountUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UserControls\Counts\OneCountViewUC.xaml">
+    <Page Include="View\Counts\UserControls\OneCashCountViewUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login\UserControls\LoginInfoUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login\UserControls\LoginUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login\UserControls\RegistarationUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,4 +223,12 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
 </Project>

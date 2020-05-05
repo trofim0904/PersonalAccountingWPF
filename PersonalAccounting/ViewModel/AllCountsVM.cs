@@ -1,4 +1,7 @@
-﻿using PersonalAccounting.ViewModel.Counts;
+﻿using DataLayer;
+using DataLayer.DataModels;
+using PersonalAccounting.Model.Counts;
+using PersonalAccounting.ViewModel.Counts;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,48 +15,50 @@ namespace PersonalAccounting.ViewModel
     {
         public AllCountsVM()
         {
+
             //TODO:
             //Normal data input
-            ListOfCashCounts = new ObservableCollection<OneCountViewVM>();
-            foreach (DataLayer.DataModels.CashCount cashCount in DataLayer.AccountingContext.CashCounts)
-            {
-                ListOfCashCounts.Add(new OneCountViewVM(
-                    new Model.Counts.CountViewInList()
-                    {
-                        AmountOfMoney = cashCount.AmountOfMoney,
-                        Name = cashCount.Name
-                    }));
-            }
+            cashlogic = new CashCountLogic();
+            ListOfCashCounts = new ObservableCollection<OneCashCountViewVM>(cashlogic.GetCashCounts());
+            //foreach (DataLayer.DataModels.CashCount count in DataLayer.AccountingContext.CashCounts)
+            //{
+            //    ListOfCashCounts.Add(new OneCashCountViewVM(
+            //        new Model.Counts.CashCountViewInList()
+            //        {
+            //            AmountOfMoney = count.AmountOfMoney,
+            //            Name = count.Name
+            //        }));
+            //}
 
-            ListOfCreditCounts = new ObservableCollection<OneCountViewVM>();
-            foreach (DataLayer.DataModels.CreditCount cashCount in DataLayer.AccountingContext.CreditCounts)
-            {
-                ListOfCreditCounts.Add(new OneCountViewVM(
-                    new Model.Counts.CountViewInList()
-                    {
-                        AmountOfMoney = cashCount.AmountOfMoney,
-                        Name = cashCount.Name
-                    }));
-            }
+            //ListOfCreditCounts = new ObservableCollection<OneCountViewVM>();
+            //foreach (DataLayer.DataModels.CreditCount count in DataLayer.AccountingContext.CreditCounts)
+            //{
+            //    ListOfCreditCounts.Add(new OneCountViewVM(
+            //        new Model.Counts.CountViewInList()
+            //        {
+            //            AmountOfMoney = count.AmountOfMoney,
+            //            Name = count.Name
+            //        }));
+            //}
 
-            ListOfDepositCounts = new ObservableCollection<OneCountViewVM>();
-            foreach (DataLayer.DataModels.DepositCount cashCount in DataLayer.AccountingContext.DepositCounts)
-            {
-                ListOfDepositCounts.Add(new OneCountViewVM(
-                    new Model.Counts.CountViewInList()
-                    {
-                        AmountOfMoney = cashCount.AmountOfMoney,
-                        Name = cashCount.Name
-                    }));
-            }
+            //ListOfDepositCounts = new ObservableCollection<OneCountViewVM>();
+            //foreach (DataLayer.DataModels.DepositCount count in DataLayer.AccountingContext.DepositCounts)
+            //{
+            //    ListOfDepositCounts.Add(new OneCountViewVM(
+            //        new Model.Counts.CountViewInList()
+            //        {
+            //            AmountOfMoney = count.AmountOfMoney,
+            //            Name = count.Name
+            //        }));
+            //}
 
 
         }
 
         #region Cash Counts
 
-        private ObservableCollection<OneCountViewVM> _listOfCashCounts;
-        public ObservableCollection<OneCountViewVM> ListOfCashCounts
+        private ObservableCollection<OneCashCountViewVM> _listOfCashCounts;
+        public ObservableCollection<OneCashCountViewVM> ListOfCashCounts
         {
             get => _listOfCashCounts;
             set
@@ -62,13 +67,13 @@ namespace PersonalAccounting.ViewModel
                 OnPropertyChanged("ListOfCashCounts");
             }
         }
-
+        CashCountLogic cashlogic;
 
         #endregion
         #region Credit Counts
 
-        private ObservableCollection<OneCountViewVM> _listOfCreditCounts;
-        public ObservableCollection<OneCountViewVM> ListOfCreditCounts
+        private ObservableCollection<OneCashCountViewVM> _listOfCreditCounts;
+        public ObservableCollection<OneCashCountViewVM> ListOfCreditCounts
         {
             get => _listOfCreditCounts;
             set
@@ -82,8 +87,8 @@ namespace PersonalAccounting.ViewModel
         #endregion
         #region Deposit Counts
 
-        private ObservableCollection<OneCountViewVM> _listOfDepositCounts;
-        public ObservableCollection<OneCountViewVM> ListOfDepositCounts
+        private ObservableCollection<OneCashCountViewVM> _listOfDepositCounts;
+        public ObservableCollection<OneCashCountViewVM> ListOfDepositCounts
         {
             get => _listOfDepositCounts;
             set

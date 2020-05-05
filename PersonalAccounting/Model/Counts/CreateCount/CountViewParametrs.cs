@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace PersonalAccounting.Model.Counts.CreateCount
 
         public string MoneyQuestion
         {
-            get => selectedCount.GetMoneyQuestion();      
+            get => selectedCount.GetMoneyQuestion();
         }
 
         public string TypeName

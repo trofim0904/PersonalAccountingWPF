@@ -25,25 +25,7 @@
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Margin" Value="15 0 15 0"/>
         </Style>
-        
-        <Style x:Key="_menubuttons" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="#34495e"/>
-            <Setter Property="Margin" Value="15 0 15 0"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#2ecc71"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
+      
 
         <Style x:Key="_rightmenubuttons" TargetType="TextBlock">
             <Setter Property="FontSize" Value="15"/>
@@ -77,10 +59,11 @@
                         HorizontalAlignment="Center">
                 <StackPanel>
                     <Button Width="60" 
-                            Style="{StaticResource _menubuttons}"
+                            Style="{DynamicResource _imgbuttons}"
                             Command="{Binding Path=CountPageCommand}"
                             IsEnabled="{Binding WindowWorkSpaceIsEnable}"
-                            Opacity="{Binding WindowWorkSpaceOpacity}">
+                            Opacity="{Binding WindowWorkSpaceOpacity}"
+                            Margin="15 0 15 0">
                         <Image Source="/Resources/counts.png"
                                Margin="5"/>
                     </Button>
@@ -89,8 +72,9 @@
                 </StackPanel>
                 <StackPanel>
                     <Button Width="60" 
-                            Style="{StaticResource _menubuttons}"
-                            Command="{Binding Path=LockWindowCommand}">
+                            Style="{DynamicResource _imgbuttons}"
+                            Command="{Binding Path=LockWindowCommand}"
+                            Margin="15 0 15 0">
                         <Image Source="/Resources/lock.png"
                                Margin="5"/>
                     </Button>
@@ -99,11 +83,12 @@
                 </StackPanel>
                 <StackPanel>
                     <Button Width="60" 
-                            Style="{StaticResource _menubuttons}"
+                            Style="{DynamicResource _imgbuttons}"
                             Command="{Binding Path=CloseAppCommand}"
                             IsEnabled="{Binding WindowWorkSpaceIsEnable}"
                             Opacity="{Binding WindowWorkSpaceOpacity}"
-                            CommandParameter="{Binding ElementName=MainW}">
+                            CommandParameter="{Binding ElementName=MainW}"
+                            Margin="15 0 15 0">
                         <Image Source="/Resources/close.png"
                                Margin="5"/>
                     </Button>

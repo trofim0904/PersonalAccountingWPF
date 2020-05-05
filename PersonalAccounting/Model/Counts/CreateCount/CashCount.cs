@@ -11,17 +11,18 @@ namespace PersonalAccounting.Model.Counts.CreateCount
     {
         public bool CreateAction(InputCountParametrs inputCountParametrs)
         {
-            //TODO
-            //Mapper
-            
-            DataLayer.AccountingContext.CashCounts.Add(new DataLayer.DataModels.CashCount()
-            {
-                AmountOfMoney = inputCountParametrs.AmountOfMoney,
-                Comment = inputCountParametrs.Comment,
-                Name = inputCountParametrs.Name,
-                Valuta = inputCountParametrs.Valuta
-            });
-            return true;
+            ////TODO
+            ////Mapper
+
+            //DataLayer.AccountingContext.CashCounts.Add(new DataLayer.DataModels.CashCount()
+            //{
+            //    AmountOfMoney = inputCountParametrs.AmountOfMoney,
+            //    Comment = inputCountParametrs.Comment,
+            //    Name = inputCountParametrs.Name,
+            //    Valuta = inputCountParametrs.Valuta
+            //});
+            //return true;
+            return false;
         }
 
         public string GetDataQuestion() => null;

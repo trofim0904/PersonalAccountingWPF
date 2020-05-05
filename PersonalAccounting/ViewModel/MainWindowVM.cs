@@ -9,6 +9,16 @@ namespace PersonalAccounting.ViewModel
 {
     public class MainWindowVM : BaseVM
     {
+        private BaseVM _selectedViewModel;
+        public BaseVM SelectedViewModel
+        {
+            get => _selectedViewModel;
+            set
+            {
+                _selectedViewModel = value;
+                OnPropertyChanged("SelectedViewModel");
+            }
+        }
 
         private float _cancelButtonVisibility;
         public float CancelButtonVisibility

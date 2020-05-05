@@ -108,7 +108,7 @@ namespace PersonalAccounting.ViewModel.Counts
 
 
 
-            //MessageBox.Show(Convert.ToDateTime(InputParametrs.StartDate).ToString("dd.MM.yyyy"));
+            
         }
 
         private CountViewParametrs _count;

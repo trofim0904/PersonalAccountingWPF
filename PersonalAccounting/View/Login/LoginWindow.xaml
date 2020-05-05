@@ -1,0 +1,77 @@
+﻿<Window x:Class="PersonalAccounting.View.Login.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonalAccounting.View.Login"
+        xmlns:vm="clr-namespace:PersonalAccounting.ViewModel.Login"
+        x:Name="LoginW"
+        mc:Ignorable="d"
+        Title="LoginWindow" WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Height="530" 
+        Width="350"
+        >
+    <Window.DataContext>
+        <vm:LoginWindowVM/>
+    </Window.DataContext>
+    <Window.Resources>
+
+        <Style TargetType="TextBlock" x:Key="_LRText">
+            <Style.Setters>
+                <Setter Property="Foreground" Value="DarkBlue"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Foreground" Value="Blue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left">
+            <TextBlock Style="{StaticResource _LRText}">
+                <TextBlock.InputBindings>
+                    <MouseBinding Command="{Binding Path=GoToLoginCommand}" 
+                                  MouseAction="LeftClick"
+                                  CommandParameter="{Binding ElementName=LoginW}"/>
+                </TextBlock.InputBindings>
+                Вход
+            </TextBlock>
+
+            <TextBlock Style="{StaticResource _LRText}">
+                <TextBlock.InputBindings>
+                    <MouseBinding Command="{Binding Path=GoToRegistrationCommand}"
+                                  MouseAction="LeftClick"
+                                  CommandParameter="{Binding ElementName=LoginW}"/>
+                </TextBlock.InputBindings>
+                Регистрация
+            </TextBlock>
+
+        </StackPanel>
+
+        <Button Grid.Row="0" 
+                Style="{DynamicResource _imgbuttons}"
+                HorizontalAlignment="Right"
+                CommandParameter="{Binding ElementName=LoginW}"
+                Command="{Binding CloseCommand}">
+            <Image Source="/Resources/close.png"
+                               Margin="5"/>
+        </Button>
+        
+        <ContentControl Grid.Row="1" 
+                        x:Name="_content" 
+                        Content="{Binding Path=SelectedViewModel}" 
+                        />
+    </Grid>
+</Window>

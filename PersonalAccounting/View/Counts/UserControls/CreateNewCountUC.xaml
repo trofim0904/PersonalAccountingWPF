@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="PersonalAccounting.View.Counts.UserControls.CreateNewCountUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PersonalAccounting.View.Counts.UserControls"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <UserControl.Resources>
+        <Style x:Key="_button" TargetType="Button">
+            <Setter Property="Margin" Value="0 10 10 0"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="_text" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Height" Value="20"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <StackPanel HorizontalAlignment="Left" 
+                    VerticalAlignment="Top"
+                    Margin="10">
+                <TextBlock Foreground="#e74c3c"
+                       FontSize="25">Создание нового счета</TextBlock>
+                <TextBlock Foreground="#2ecc71">Шаг. 1 Выберите тип счета</TextBlock>
+                <TextBlock FontSize="15"
+                       Margin="0 10 0 0">Тип счета:</TextBlock>
+                <ComboBox Background="#3498db" 
+                      SelectedItem="{Binding Path=CountType}" 
+                      ItemsSource="{Binding Path=Types}"
+                      DisplayMemberPath="Name"
+                      >
+
+                </ComboBox>
+                <Button Style="{StaticResource _button}"
+                        Command="{Binding SelectTypeCommand}">Вибрать</Button>
+
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" 
+              IsEnabled="{Binding SecondPartEnable}"
+              Opacity="{Binding SecondPartOpacity}">
+            <StackPanel HorizontalAlignment="Left" 
+                    VerticalAlignment="Top"
+                    Margin="10">
+
+                <TextBlock Foreground="#e74c3c"
+                           FontSize="25"
+                           Text="{Binding Path=Count.TypeName}"></TextBlock>
+                <TextBlock Foreground="#2ecc71"
+                       Margin="0 0 0 10">Шаг. 2 Укажыте параметры</TextBlock>
+
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource _text}">Как Вы хотите назвать этот счет?</TextBlock>
+                        <TextBox Margin="0 0 0 10"
+                                 Text="{Binding InputParametrs.Name}"></TextBox>
+                        <TextBlock Style="{StaticResource _text}">Валюта:</TextBlock>
+                        <ComboBox Margin="0 0 0 10"
+                                  SelectedItem="{Binding InputParametrs.Valuta}"
+                                  ItemsSource="{Binding Path=ValutaTypes}"
+                                  DisplayMemberPath="Name">
+                            
+                        </ComboBox>
+                        <TextBlock Style="{StaticResource _text}"
+                           Text="{Binding Path=Count.MoneyQuestion}"></TextBlock>
+                        <TextBox Margin="0 0 0 10"
+                                 Text="{Binding InputParametrs.AmountOfMoney}"></TextBox>
+                        <TextBlock Style="{StaticResource _text}">Напишите, если нужно, комментарий</TextBlock>
+                        <TextBox AcceptsReturn="True" 
+                                 TextWrapping="Wrap"
+                                 Height="100"
+                                 Text="{Binding InputParametrs.Comment}"></TextBox>
+
+                        <Button Style="{StaticResource _button}"
+                                Command="{Binding Path=CreateNewCountCommand}">Создать</Button>
+                    </StackPanel>
+                    <StackPanel Margin="15 0 0 0">
+                        <TextBlock Style="{StaticResource _text}"
+                                   Opacity="{Binding Count.VisibilityBankQuestion}">Какой банк?</TextBlock>
+                        <TextBox Margin="0 0 0 10"
+                                 Text="{Binding InputParametrs.BankName}"
+                                 Opacity="{Binding Count.VisibilityBankQuestion}"></TextBox>
+                        <TextBlock Style="{StaticResource _text}"
+                                   Text="{Binding Count.DataQuestion}"
+                                   Opacity="{Binding Path=Count.VisibilityDataQuestion}"></TextBlock>
+                        <DatePicker Margin="0 0 0 10"
+                                    SelectedDate="{Binding InputParametrs.StartDate}"
+                                    Opacity="{Binding Path=Count.VisibilityDataQuestion}"></DatePicker>
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

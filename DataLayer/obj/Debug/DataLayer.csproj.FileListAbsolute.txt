@@ -4,3 +4,12 @@ E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.
 E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.dll
 E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.pdb
 E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\bin\Debug\DataLayer.dll.config
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\bin\Debug\EntityFramework.dll
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\bin\Debug\EntityFramework.xml
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.Migrations.InitialCreate.resources
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.Migrations.renameNamatoName.resources

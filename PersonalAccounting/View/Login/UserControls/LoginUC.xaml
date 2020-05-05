@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="PersonalAccounting.View.Login.UserControls.LoginUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PersonalAccounting.View.Login.UserControls"
+             mc:Ignorable="d" 
+             Height="505" 
+             Width="350">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" x:Key="_tb">
+            <Setter Property="Margin" Value="10 10 10 0"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <Style TargetType="PasswordBox" x:Key="_pb">
+            <Setter Property="Margin" Value="10 0 10 0"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="BorderThickness" Value="0 0 0 3"/>
+            <Setter Property="BorderBrush" Value="#34495e"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="_tbox">
+            <Setter Property="Margin" Value="10 0 10 0"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="BorderThickness" Value="0 0 0 3"/>
+            <Setter Property="BorderBrush" Value="#34495e"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="White">
+        <StackPanel>
+            <TextBlock
+                HorizontalAlignment="Center"
+                Margin="40 40 40 80"
+                FontSize="30">Логин</TextBlock>
+            <TextBlock Style="{StaticResource _tb}">Имя:</TextBlock>
+            <TextBox Style="{StaticResource _tbox}"
+                     Text="{Binding Path=InputData.Name}"></TextBox>
+            <TextBlock Style="{StaticResource _tb}">Пароль:</TextBlock>
+            <PasswordBox Style="{StaticResource _pb}"
+                     x:Name="pass"></PasswordBox>
+         
+
+        </StackPanel>
+        <Button Background="#bdc3c7"
+                CommandParameter="{Binding ElementName=pass}"
+                Command="{Binding Path=LoginCommand}">
+            <TextBlock FontSize="15"
+                     Margin="0"
+                     Background="Transparent">Войти</TextBlock>
+        </Button>
+    </Grid>
+</UserControl>

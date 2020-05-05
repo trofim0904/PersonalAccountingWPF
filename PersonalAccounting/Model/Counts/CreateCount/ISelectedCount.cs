@@ -19,7 +19,7 @@ namespace PersonalAccounting.Model.Counts.CreateCount
         float GetVisibilityBankQuestion();
 
         bool CreateAction(InputCountParametrs inputCountParametrs);
-        
+
 
     }
 }
