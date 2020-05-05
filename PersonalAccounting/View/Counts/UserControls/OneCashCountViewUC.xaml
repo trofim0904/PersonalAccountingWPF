@@ -7,6 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+        
         <Style x:Key="_actionbutton" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="White"/>
             <Setter Property="Margin" Value="20 0 0 0"/>
@@ -44,7 +46,8 @@
             <Button Style="{StaticResource _actionbutton}">
                 <Image Source="/Resources/details.png"/>
             </Button>
-            <Button Style="{StaticResource _actionbutton}">
+            <Button Style="{StaticResource _actionbutton}"
+                    Visibility="{Binding Path=CountView.AddButtonVisibility, Converter={StaticResource BoolToVisConverter}}">
                 <Image Source="/Resources/add.png"/>
             </Button>
         </StackPanel>

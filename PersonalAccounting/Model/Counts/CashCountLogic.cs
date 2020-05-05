@@ -1,11 +1,8 @@
 ﻿using DataLayer.DataModels;
 using DataLayer.Repositories.CashCountRepository;
+using PersonalAccounting.Model.Counts.ModelsForList;
 using PersonalAccounting.ViewModel.Counts;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PersonalAccounting.Model.Counts
 {
@@ -17,14 +14,18 @@ namespace PersonalAccounting.Model.Counts
             using (ICashCountRepository repository = new CashCountRepository())
             {
                 ICollection<CashCount> list = repository.GetCashCountsByUserId(MyUser.UserId);
+                
+                CashCountViewInList cashcount = new CashCountViewInList();
+
                 foreach(CashCount count in list)
                 {
-                    resultlist.Add(new OneCashCountViewVM(new CashCountViewInList()
-                    {
-                        AmountOfMoney = count.AmountOfMoney,
-                        Id = count.Id,
-                        Name = count.Name
-                    }));
+                    
+                    CashCountViewInList cash = cashcount.Clone() as CashCountViewInList;
+                    cash.AmountOfMoney = count.AmountOfMoney;
+                    cash.Id = count.Id;
+                    cash.Name = count.Name;
+
+                    resultlist.Add(new OneCashCountViewVM(cash));
                     
                 }
             }

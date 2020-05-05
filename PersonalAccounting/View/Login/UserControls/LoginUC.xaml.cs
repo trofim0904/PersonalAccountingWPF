@@ -23,6 +23,11 @@ namespace PersonalAccounting.View.Login.UserControls
         public LoginUC()
         {
             InitializeComponent();
+
+#if DEBUG
+            
+            _pass.Password = "admin";
+#endif
         }
     }
 }

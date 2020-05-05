@@ -33,6 +33,13 @@ namespace PersonalAccounting.ViewModel.Login
             _window = window;
 
             InputData = new LoginModel();
+
+
+#if DEBUG
+            InputData.Name = "admin";
+#endif
+
+
             LoginCommand = new DelegateCommand(Login);
         }
 

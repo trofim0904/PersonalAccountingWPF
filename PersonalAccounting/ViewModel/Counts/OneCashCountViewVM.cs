@@ -1,9 +1,4 @@
-﻿using PersonalAccounting.Model.Counts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PersonalAccounting.Model.Counts.ModelsForList;
 
 namespace PersonalAccounting.ViewModel.Counts
 {
@@ -19,6 +14,7 @@ namespace PersonalAccounting.ViewModel.Counts
                 OnPropertyChanged("CountView");
             }
         }
+        
         public OneCashCountViewVM(CashCountViewInList countView)
         {
             CountView = countView;

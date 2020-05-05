@@ -10,7 +10,7 @@
              xmlns:loginviewmodels="clr-namespace:PersonalAccounting.ViewModel.Login"
              StartupUri="View/Login/LoginWindow.xaml">
     <Application.Resources>
-        <DataTemplate DataType="{x:Type viewmodels:AllCountsVM}">
+        <DataTemplate DataType="{x:Type countviewmodels:AllCountsVM}">
             <countviews:AllCountsUC/>
         </DataTemplate>
 

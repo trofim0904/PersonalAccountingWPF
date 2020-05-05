@@ -38,15 +38,16 @@
                 FontSize="30">Логин</TextBlock>
             <TextBlock Style="{StaticResource _tb}">Имя:</TextBlock>
             <TextBox Style="{StaticResource _tbox}"
-                     Text="{Binding Path=InputData.Name}"></TextBox>
+                     Text="{Binding Path=InputData.Name}"
+                     x:Name="_nametb"></TextBox>
             <TextBlock Style="{StaticResource _tb}">Пароль:</TextBlock>
             <PasswordBox Style="{StaticResource _pb}"
-                     x:Name="pass"></PasswordBox>
+                     x:Name="_pass"></PasswordBox>
          
 
         </StackPanel>
         <Button Background="#bdc3c7"
-                CommandParameter="{Binding ElementName=pass}"
+                CommandParameter="{Binding ElementName=_pass}"
                 Command="{Binding Path=LoginCommand}">
             <TextBlock FontSize="15"
                      Margin="0"

@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalAccounting.ViewModel
+namespace PersonalAccounting.ViewModel.Counts
 {
     public class AllCountsVM : BaseVM
     {
