@@ -8,6 +8,10 @@ namespace PersonalAccounting.Model.Counts.ModelsForList
 {
     public class CashCountViewInList : CountViewInList
     {
+
+        public bool PeriodChanges { get; set; }
+
+
         public CashCountViewInList():base(true)
         {
         }

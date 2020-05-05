@@ -10,5 +10,6 @@ namespace DataLayer.Repositories.CashCountRepository
     public interface ICashCountRepository : IRepository<CashCount>
     {
         ICollection<CashCount> GetCashCountsByUserId(int userid);
+        bool UpdatePeriodChanges(int id);
     }
 }

@@ -1,13 +1,5 @@
-﻿using DataLayer;
-using DataLayer.DataModels;
-using PersonalAccounting.Model.Counts;
-using PersonalAccounting.ViewModel.Counts;
-using System;
-using System.Collections.Generic;
+﻿using PersonalAccounting.Model.Counts.CashCounts;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PersonalAccounting.ViewModel.Counts
 {

@@ -66,6 +66,10 @@
     <Compile Include="Migrations\202005051559512_rename Nama to Name.designer.cs">
       <DependentUpon>202005051559512_rename Nama to Name.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005052226223_add periodchanges field.cs" />
+    <Compile Include="Migrations\202005052226223_add periodchanges field.designer.cs">
+      <DependentUpon>202005052226223_add periodchanges field.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CashCountRepository\CashCountRepository.cs" />
@@ -83,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005051559512_rename Nama to Name.resx">
       <DependentUpon>202005051559512_rename Nama to Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005052226223_add periodchanges field.resx">
+      <DependentUpon>202005052226223_add periodchanges field.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

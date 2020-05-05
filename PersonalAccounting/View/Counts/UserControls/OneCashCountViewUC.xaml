@@ -43,12 +43,17 @@
                 HorizontalAlignment="Left"
                 Width="150"
                 Text="{Binding Path=CountView.Name}"></TextBlock>
-            <Button Style="{StaticResource _actionbutton}">
+            <Button Style="{StaticResource _actionbutton}"
+                    Command="{Binding Path=ShowCountDetailsCommand}">
                 <Image Source="/Resources/details.png"/>
             </Button>
             <Button Style="{StaticResource _actionbutton}"
                     Visibility="{Binding Path=CountView.AddButtonVisibility, Converter={StaticResource BoolToVisConverter}}">
                 <Image Source="/Resources/add.png"/>
+            </Button>
+            <Button Style="{StaticResource _actionbutton}"
+                    Visibility="{Binding Path=CountView.PeriodChanges, Converter={StaticResource BoolToVisConverter}}">
+                <Image Source="/Resources/time.png"/>
             </Button>
         </StackPanel>
         <TextBlock Style="{StaticResource _tb}"

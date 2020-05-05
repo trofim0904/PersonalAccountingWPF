@@ -72,7 +72,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Counts\CashCountLogic.cs" />
+    <Compile Include="Model\Counts\CashCounts\CashCountInfo.cs" />
+    <Compile Include="Model\Counts\CashCounts\CashCountLogic.cs" />
+    <Compile Include="Model\Counts\CashCounts\CashCountLogicDecorator.cs" />
+    <Compile Include="Model\Counts\CashCounts\CashCountPeriodChanges.cs" />
+    <Compile Include="Model\Counts\CashCounts\CashLogicWithPeriodChanges.cs" />
+    <Compile Include="Model\Counts\CashCounts\GeneralCashCountLogic.cs" />
     <Compile Include="Model\Counts\ModelsForList\CashCountViewInList.cs" />
     <Compile Include="Model\Counts\CreateCount\CashCount.cs" />
     <Compile Include="Model\Counts\CreateCount\CountViewParametrs.cs" />
@@ -94,6 +99,7 @@
     <Compile Include="MyUser.cs" />
     <Compile Include="ViewModel\Counts\AllCountsVM.cs" />
     <Compile Include="ViewModel\BaseVM.cs" />
+    <Compile Include="ViewModel\Counts\CountInfoWindowVM.cs" />
     <Compile Include="ViewModel\Counts\CreateNewCountVM.cs" />
     <Compile Include="ViewModel\Counts\OneCashCountViewVM.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
@@ -102,6 +108,9 @@
     <Compile Include="ViewModel\Login\LoginWindowVM.cs" />
     <Compile Include="ViewModel\Login\RegistarationVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
+    <Compile Include="View\Counts\CountInfoWindow.xaml.cs">
+      <DependentUpon>CountInfoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Login\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -130,6 +139,10 @@
     <Compile Include="View\Login\UserControls\RegistarationUC.xaml.cs">
       <DependentUpon>RegistarationUC.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Counts\CountInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Login\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -222,7 +235,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\time.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

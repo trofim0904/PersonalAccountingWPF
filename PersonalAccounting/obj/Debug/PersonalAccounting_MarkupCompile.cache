@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\App.xaml
-8-851315997
+9-1006815817
 
-42-844735754
+45-131967445
 20-1183348124
-View\Login\LoginWindow.xaml;View\MainWindow.xaml;View\Counts\UserControls\AllCountsUC.xaml;View\Counts\UserControls\CreateNewCountUC.xaml;View\Counts\UserControls\OneCashCountViewUC.xaml;View\Login\UserControls\LoginInfoUC.xaml;View\Login\UserControls\LoginUC.xaml;View\Login\UserControls\RegistarationUC.xaml;
+View\Counts\CountInfoWindow.xaml;View\Login\LoginWindow.xaml;View\MainWindow.xaml;View\Counts\UserControls\AllCountsUC.xaml;View\Counts\UserControls\CreateNewCountUC.xaml;View\Counts\UserControls\OneCashCountViewUC.xaml;View\Login\UserControls\LoginInfoUC.xaml;View\Login\UserControls\LoginUC.xaml;View\Login\UserControls\RegistarationUC.xaml;
 
 False
 

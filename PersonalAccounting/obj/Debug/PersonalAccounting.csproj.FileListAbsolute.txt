@@ -43,3 +43,5 @@ E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\V
 E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\Counts\UserControls\AllCountsUC.baml
 E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\Counts\UserControls\CreateNewCountUC.baml
 E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\Counts\UserControls\OneCashCountViewUC.baml
+E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\Counts\CountInfoWindow.g.cs
+E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\Counts\CountInfoWindow.baml

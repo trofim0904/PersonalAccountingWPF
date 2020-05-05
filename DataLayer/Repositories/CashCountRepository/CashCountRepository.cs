@@ -18,5 +18,19 @@ namespace DataLayer.Repositories.CashCountRepository
         {
             throw new NotImplementedException();
         }
+
+        public bool UpdatePeriodChanges(int id)
+        {
+            CashCount cash = context.CashCounts.Find(id);
+            if (cash.PeriodChanges)
+            {
+                cash.PeriodChanges = false;
+            }
+            if (!cash.PeriodChanges)
+            {
+                cash.PeriodChanges = true;
+            }
+            return true;
+        }
     }
 }
