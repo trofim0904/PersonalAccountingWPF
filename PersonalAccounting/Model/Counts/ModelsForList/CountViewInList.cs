@@ -12,11 +12,11 @@ namespace PersonalAccounting.Model.Counts.ModelsForList
         public string Name { get; set; }
         public float AmountOfMoney { get; set; }
 
-        public bool AddButtonVisibility { get; set; }
+        public bool AmountMoneyChangeEnable { get; set; }
 
         public CountViewInList(bool param)
         {
-            AddButtonVisibility = param;
+            AmountMoneyChangeEnable = param;
         }
 
         public abstract CountViewInList Clone();

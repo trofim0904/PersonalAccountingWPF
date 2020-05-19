@@ -100,6 +100,8 @@ namespace PersonalAccounting.ViewModel.Counts
             {
                 MessageBox.Show("Добавлено");
                 InputParametrs = new InputCountParametrs();
+                
+
             }
             else
             {
@@ -111,8 +113,8 @@ namespace PersonalAccounting.ViewModel.Counts
             
         }
 
-        private CountViewParametrs _count;
-        public CountViewParametrs Count
+        private CountCreation _count;
+        public CountCreation Count
         {
             get => _count;
             set
@@ -130,7 +132,7 @@ namespace PersonalAccounting.ViewModel.Counts
             SecondPartEnable = true;
             SecondPartOpacity = 1;
 
-            Count = new CountViewParametrs(CountType.CountTypes[CountType.Id - 1].SelectedCount);
+            Count = new RefindCountCreation(CountType.CountTypes[CountType.Id - 1].SelectedCount);
             
 
         }

@@ -75,12 +75,13 @@
     <Compile Include="Model\Counts\CashCounts\CashCountInfo.cs" />
     <Compile Include="Model\Counts\CashCounts\CashCountLogic.cs" />
     <Compile Include="Model\Counts\CashCounts\CashCountLogicDecorator.cs" />
-    <Compile Include="Model\Counts\CashCounts\CashCountPeriodChanges.cs" />
     <Compile Include="Model\Counts\CashCounts\CashLogicWithPeriodChanges.cs" />
     <Compile Include="Model\Counts\CashCounts\GeneralCashCountLogic.cs" />
+    <Compile Include="Model\Counts\CashCounts\SpecificCashCountLogic.cs" />
+    <Compile Include="Model\Counts\CreateCount\RefindCountCreation.cs" />
     <Compile Include="Model\Counts\ModelsForList\CashCountViewInList.cs" />
     <Compile Include="Model\Counts\CreateCount\CashCount.cs" />
-    <Compile Include="Model\Counts\CreateCount\CountViewParametrs.cs" />
+    <Compile Include="Model\Counts\CreateCount\CountCreation.cs" />
     <Compile Include="Model\Counts\CreateCount\CreditCount.cs" />
     <Compile Include="Model\Counts\CreateCount\DepositCount.cs" />
     <Compile Include="Model\Counts\CreateCount\InputCountParametrs.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Model\Counts\CreateCount\ISelectedCount.cs" />
     <Compile Include="Model\Counts\ModelsForList\CountViewInList.cs" />
     <Compile Include="Model\Counts\ModelsForList\CreditCountViewInList.cs" />
+    <Compile Include="Model\Counts\ModelsForList\PeriodChange.cs" />
     <Compile Include="Model\Counts\ValutaType.cs" />
     <Compile Include="Model\Login\LoginLogic.cs" />
     <Compile Include="Model\Login\LoginModel.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="MyUser.cs" />
     <Compile Include="ViewModel\Counts\AllCountsVM.cs" />
     <Compile Include="ViewModel\BaseVM.cs" />
+    <Compile Include="ViewModel\Counts\AllPeriodChangeWindowVM.cs" />
     <Compile Include="ViewModel\Counts\CountInfoWindowVM.cs" />
     <Compile Include="ViewModel\Counts\CreateNewCountVM.cs" />
     <Compile Include="ViewModel\Counts\OneCashCountViewVM.cs" />
@@ -108,6 +111,9 @@
     <Compile Include="ViewModel\Login\LoginWindowVM.cs" />
     <Compile Include="ViewModel\Login\RegistarationVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
+    <Compile Include="View\Counts\AllPeriodChangesWindow.xaml.cs">
+      <DependentUpon>AllPeriodChangesWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Counts\CountInfoWindow.xaml.cs">
       <DependentUpon>CountInfoWindow.xaml</DependentUpon>
     </Compile>
@@ -139,6 +145,10 @@
     <Compile Include="View\Login\UserControls\RegistarationUC.xaml.cs">
       <DependentUpon>RegistarationUC.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Counts\AllPeriodChangesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Counts\CountInfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

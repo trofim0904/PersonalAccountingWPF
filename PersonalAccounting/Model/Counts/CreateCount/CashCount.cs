@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DataLayer.Repositories.CashCountRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,16 +14,31 @@ namespace PersonalAccounting.Model.Counts.CreateCount
         {
             ////TODO
             ////Mapper
-
-            //DataLayer.AccountingContext.CashCounts.Add(new DataLayer.DataModels.CashCount()
-            //{
-            //    AmountOfMoney = inputCountParametrs.AmountOfMoney,
-            //    Comment = inputCountParametrs.Comment,
-            //    Name = inputCountParametrs.Name,
-            //    Valuta = inputCountParametrs.Valuta
-            //});
-            //return true;
-            return false;
+            bool result = true;
+            using(CashCountRepository repository = new CashCountRepository())
+            {
+                DataLayer.DataModels.CashCount count = new DataLayer.DataModels.CashCount()
+                {
+                    Name = inputCountParametrs.Name,
+                    AmountOfMoney = inputCountParametrs.AmountOfMoney,
+                    Comment = inputCountParametrs.Comment,
+                    Valuta = inputCountParametrs.Valuta,
+                    UserId = MyUser.UserId,
+                    PeriodChanges = false
+                };
+                try
+                {
+                    repository.Create(count);
+                    repository.Save();
+                }
+                catch
+                {
+                    result = false;
+                }
+                
+            }
+            
+            return result;
         }
 
         public string GetDataQuestion() => null;

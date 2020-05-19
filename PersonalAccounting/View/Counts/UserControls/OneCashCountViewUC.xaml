@@ -36,6 +36,7 @@
         </Style>
     </UserControl.Resources>
     <Grid>
+       
         <StackPanel Orientation="Horizontal"
                     Height="50">
             <TextBlock
@@ -48,12 +49,18 @@
                 <Image Source="/Resources/details.png"/>
             </Button>
             <Button Style="{StaticResource _actionbutton}"
-                    Visibility="{Binding Path=CountView.AddButtonVisibility, Converter={StaticResource BoolToVisConverter}}">
+                    Visibility="{Binding Path=CountView.AmountMoneyChangeEnable, Converter={StaticResource BoolToVisConverter}}">
                 <Image Source="/Resources/add.png"/>
             </Button>
-            <Button Style="{StaticResource _actionbutton}"
-                    Visibility="{Binding Path=CountView.PeriodChanges, Converter={StaticResource BoolToVisConverter}}">
-                <Image Source="/Resources/time.png"/>
+            <Button Background="White"
+                    Margin="20 0 0 0"
+                    Height="30"
+                    Command="{Binding Path=ShowPeriodChangeCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center"
+                               Margin="5">Периодические доходы/расходы</TextBlock>
+                    <Image Source="/Resources/time.png"/>
+                </StackPanel>
             </Button>
         </StackPanel>
         <TextBlock Style="{StaticResource _tb}"

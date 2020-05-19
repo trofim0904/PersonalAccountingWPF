@@ -26,11 +26,12 @@ namespace DataLayer.Repositories.CashCountRepository
             {
                 cash.PeriodChanges = false;
             }
-            if (!cash.PeriodChanges)
+            else
             {
                 cash.PeriodChanges = true;
             }
             return true;
         }
+        
     }
 }

@@ -9,31 +9,16 @@ namespace PersonalAccounting.Model.Counts.CashCounts
 {
     public class CashLogicWithPeriodChanges : CashCountLogicDecorator
     {
-        public CashLogicWithPeriodChanges(GeneralCashCountLogic generalCashCountLogic):base(generalCashCountLogic)
+        public CashLogicWithPeriodChanges(IGeneralCashCountLogic generalCashCountLogic):base(generalCashCountLogic)
         {
 
         }
 
-       
 
-        public override CashCountInfo GetCashCountInfoById(int id)
+        public bool GetAllPeriodChange(int id)
         {
-            return generalCashCountLogic.GetCashCountInfoById(id);
-        }
-
-        public override List<OneCashCountViewVM> GetCashCounts()
-        {
-            return generalCashCountLogic.GetCashCounts();
-        }
-
-        public override List<CashCountPeriodChanges> GetChanges(int id)
-        {
-            return null;
-        }
-
-        public override bool UpdatePeriodChanges(int id)
-        {
-            return generalCashCountLogic.UpdatePeriodChanges(id);
+            //add period change
+            return false;
         }
     }
 }

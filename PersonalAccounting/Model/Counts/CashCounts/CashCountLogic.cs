@@ -7,9 +7,9 @@ using System.Net.Sockets;
 
 namespace PersonalAccounting.Model.Counts.CashCounts
 {
-    public class CashCountLogic : GeneralCashCountLogic
+    public class CashCountLogic
     {
-        public override List<OneCashCountViewVM> GetCashCounts()
+        public List<OneCashCountViewVM> GetCashCounts()
         {
             List<OneCashCountViewVM> resultlist = new List<OneCashCountViewVM>();
             using (ICashCountRepository repository = new CashCountRepository())
@@ -35,7 +35,7 @@ namespace PersonalAccounting.Model.Counts.CashCounts
             return resultlist;
         }
 
-        public override CashCountInfo GetCashCountInfoById(int id)
+        public CashCountInfo GetCashCountInfoById(int id)
         {
             CashCountInfo cash = new CashCountInfo();
 
@@ -51,7 +51,7 @@ namespace PersonalAccounting.Model.Counts.CashCounts
 
             return cash;
         }
-        public override bool UpdatePeriodChanges(int id)
+        public bool UpdatePeriodChanges(int id)
         {
             bool result;
             using (CashCountRepository repository = new CashCountRepository())

@@ -7,42 +7,49 @@ using System.Threading.Tasks;
 
 namespace PersonalAccounting.Model.Counts.CreateCount
 {
-    public class CountViewParametrs
+    public abstract class CountCreation
     {
 
-        ISelectedCount selectedCount;
-
-        public CountViewParametrs(ISelectedCount selectedCount)
+        protected ISelectedCount selectedCount;
+        public ISelectedCount SelectedCount
         {
-            this.selectedCount = selectedCount;
+            set
+            {
+                selectedCount = value;
+            }
         }
 
-        public bool CreateAction(InputCountParametrs inputCountParametrs)
+        public CountCreation(ISelectedCount selectedCount)
+        {
+            SelectedCount = selectedCount;
+        }
+
+        public virtual bool CreateAction(InputCountParametrs inputCountParametrs)
         {
             return selectedCount.CreateAction(inputCountParametrs);
         }
 
-        public string DataQuestion
+        public virtual string DataQuestion
         {
             get => selectedCount.GetDataQuestion();
         }
 
-        public string MoneyQuestion
+        public virtual string MoneyQuestion
         {
             get => selectedCount.GetMoneyQuestion();
         }
 
-        public string TypeName
+        public virtual string TypeName
         {
             get => selectedCount.GetTypeName();
         }
 
-        public float VisibilityBankQuestion
+        public virtual float VisibilityBankQuestion
         {
             get => selectedCount.GetVisibilityBankQuestion();
         }
 
-        public float VisibilityDataQuestion
+        public virtual float VisibilityDataQuestion
         {
             get => selectedCount.GetVisibilityDataQuestion();
         }

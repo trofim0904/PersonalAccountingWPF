@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalAccounting.Model.Counts.CashCounts
+namespace PersonalAccounting.Model.Counts.ModelsForList
 {
-    public class CashCountPeriodChanges
+    public class PeriodChange
     {
-        
     }
 }

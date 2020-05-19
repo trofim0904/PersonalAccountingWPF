@@ -30,7 +30,8 @@
             <Setter Property="VerticalAlignment" Value="Bottom"/>
         </Style>
     </UserControl.Resources>
-    <Grid Background="White">
+    <Grid Background="White"
+          Margin="10">
         <StackPanel>
             <TextBlock
                 HorizontalAlignment="Center"

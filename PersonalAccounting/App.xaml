@@ -36,7 +36,6 @@
 
         <Style x:Key="_imgbuttons" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#34495e"/>
-            
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">

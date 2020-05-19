@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 
 namespace PersonalAccounting.Model.Counts.CashCounts
 {
-    public abstract class CashCountLogicDecorator : GeneralCashCountLogic
+    public abstract class CashCountLogicDecorator : IGeneralCashCountLogic
     {
-        protected GeneralCashCountLogic generalCashCountLogic;
+        protected IGeneralCashCountLogic generalCashCountLogic;
 
-        public CashCountLogicDecorator(GeneralCashCountLogic generalCashCountLogic)
+        public CashCountLogicDecorator(IGeneralCashCountLogic generalCashCountLogic)
         {
             this.generalCashCountLogic = generalCashCountLogic;
         }
 
-        public abstract List<CashCountPeriodChanges> GetChanges(int id);
+        public bool AddExpensesOrIncome(int id)
+        {
+            return generalCashCountLogic.AddExpensesOrIncome(id);
+        }
+
+        
     }
 }

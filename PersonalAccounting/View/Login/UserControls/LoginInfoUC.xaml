@@ -13,6 +13,6 @@
                    Text="{Binding Path=InfoText}"
                    TextWrapping="Wrap"
                    FontSize="20"
-                   Margin="10"></TextBlock>
+                   Margin="20"></TextBlock>
     </Grid>
 </UserControl>
