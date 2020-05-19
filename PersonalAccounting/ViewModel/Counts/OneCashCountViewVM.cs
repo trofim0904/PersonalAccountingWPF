@@ -50,10 +50,11 @@ namespace PersonalAccounting.ViewModel.Counts
         private void ShowPeriodChange(object obj)
         {
 
-            _periodlogic.GetAllPeriodChange(CountView.Id);
+
+            Window window = new AllPeriodChangesWindow(_periodlogic.GetAllPeriodChange(CountView.Id));
+            window.Show();
 
 
-            MessageBox.Show("Add Period Change");
         }
 
         private void ShowCountDetails(object obj)

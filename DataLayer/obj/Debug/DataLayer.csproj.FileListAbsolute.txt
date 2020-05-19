@@ -14,3 +14,5 @@ E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.
 E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
 E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.Migrations.renameNamatoName.resources
 E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.Migrations.addperiodchangesfield.resources
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.Migrations.AddnewtableCashCountPeriodChangeandaddnewfieldtotableCashCountAction.resources
+E:\6 semester\ТРПЗ\project\PersonalAccounting\DataLayer\obj\Debug\DataLayer.Migrations.updatetableCashCountPeriodChange.resources

@@ -1,4 +1,7 @@
-﻿using PersonalAccounting.ViewModel.Counts;
+﻿using DataLayer.DataModels;
+using DataLayer.Repositories.CashCountPeriodChangeRepository;
+using PersonalAccounting.Model.Counts.CashCounts.PeriodChangeModels;
+using PersonalAccounting.ViewModel.Counts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +18,25 @@ namespace PersonalAccounting.Model.Counts.CashCounts
         }
 
 
-        public bool GetAllPeriodChange(int id)
+        public List<PeriodChange> GetAllPeriodChange(int id)
         {
-            //add period change
-            return false;
+            List<PeriodChange> result = new List<PeriodChange>();  
+            using (CashCountPeriodChangeRepository repository = new CashCountPeriodChangeRepository())
+            {
+                ICollection<CashCountPeriodChange> list = repository.GetCashCountPeriodChangeByCountId(id);
+                foreach(CashCountPeriodChange periodChange in list)
+                {
+                    result.Add(new PeriodChange()
+                    {
+                        CashCountActionCategory = repository.GetCountActionNameById(periodChange.CashCountActionCategoryId),
+                        ChangeDate = periodChange.ChangeDate,
+                        Comment = periodChange.Comment,
+                        Sum = periodChange.Sum,
+                        Id = periodChange.Id
+                    });
+                }
+            }
+            return result;
         }
     }
 }

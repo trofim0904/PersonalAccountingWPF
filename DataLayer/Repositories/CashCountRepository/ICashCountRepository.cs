@@ -11,5 +11,7 @@ namespace DataLayer.Repositories.CashCountRepository
     {
         ICollection<CashCount> GetCashCountsByUserId(int userid);
         bool UpdatePeriodChanges(int id);
-    }
+        int GetTotalNumberOfCounts(int userid);
+        float GetTotalSumOfCounts(int userid)
+;    }
 }

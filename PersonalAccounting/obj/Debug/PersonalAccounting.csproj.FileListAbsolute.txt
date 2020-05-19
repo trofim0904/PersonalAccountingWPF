@@ -47,3 +47,5 @@ E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\V
 E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\Counts\CountInfoWindow.baml
 E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\Counts\AllPeriodChangesWindow.g.cs
 E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\Counts\AllPeriodChangesWindow.baml
+E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\Counts\UserControls\PeriodChangeViewUC.g.cs
+E:\6 semester\ТРПЗ\project\PersonalAccounting\PersonalAccounting\obj\Debug\View\Counts\UserControls\PeriodChangeViewUC.baml

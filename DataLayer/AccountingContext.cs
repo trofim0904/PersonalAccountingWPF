@@ -1,4 +1,5 @@
 ﻿using DataLayer.DataModels;
+using DataLayer.Repositories.CashCountPeriodChangeRepository;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -18,5 +19,6 @@ namespace DataLayer
         public DbSet<CashCount> CashCounts { get; set; }
         public DbSet<CashCountAction> CashCountActions { get; set; }
         public DbSet<CashCountActionCategory> CashCountActionCategories { get; set; }
+        public DbSet<CashCountPeriodChange> CashCountPeriodChanges { get; set; }
     }
 }

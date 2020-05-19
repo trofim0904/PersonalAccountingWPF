@@ -5,44 +5,40 @@ namespace PersonalAccounting.ViewModel.Counts
 {
     public class AllCountsVM : BaseVM
     {
+        private int _totalNumberOfCounts;
+        public int TotalNumberOfCounts
+        {
+            get => _totalNumberOfCounts;
+            set
+            {
+                _totalNumberOfCounts = value;
+                OnPropertyChanged("TotalNumberOfCounts");
+            }
+        }
+        private float _totalSum;
+        public float TotalSum
+        {
+            get => _totalSum;
+            set
+            {
+                _totalSum = value;
+                OnPropertyChanged("TotalSum");
+            }
+        }
         public AllCountsVM()
         {
+            
+
 
             //TODO:
-            //Normal data input
+            //Normal data input for credit and deposit
             cashlogic = new CashCountLogic();
             ListOfCashCounts = new ObservableCollection<OneCashCountViewVM>(cashlogic.GetCashCounts());
-            //foreach (DataLayer.DataModels.CashCount count in DataLayer.AccountingContext.CashCounts)
-            //{
-            //    ListOfCashCounts.Add(new OneCashCountViewVM(
-            //        new Model.Counts.CashCountViewInList()
-            //        {
-            //            AmountOfMoney = count.AmountOfMoney,
-            //            Name = count.Name
-            //        }));
-            //}
 
-            //ListOfCreditCounts = new ObservableCollection<OneCountViewVM>();
-            //foreach (DataLayer.DataModels.CreditCount count in DataLayer.AccountingContext.CreditCounts)
-            //{
-            //    ListOfCreditCounts.Add(new OneCountViewVM(
-            //        new Model.Counts.CountViewInList()
-            //        {
-            //            AmountOfMoney = count.AmountOfMoney,
-            //            Name = count.Name
-            //        }));
-            //}
 
-            //ListOfDepositCounts = new ObservableCollection<OneCountViewVM>();
-            //foreach (DataLayer.DataModels.DepositCount count in DataLayer.AccountingContext.DepositCounts)
-            //{
-            //    ListOfDepositCounts.Add(new OneCountViewVM(
-            //        new Model.Counts.CountViewInList()
-            //        {
-            //            AmountOfMoney = count.AmountOfMoney,
-            //            Name = count.Name
-            //        }));
-            //}
+
+            TotalSum = cashlogic.GetTotalSumOfCounts();
+            TotalNumberOfCounts = cashlogic.GetTotalNumberOfCounts();
 
 
         }

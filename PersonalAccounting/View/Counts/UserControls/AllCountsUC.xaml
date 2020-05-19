@@ -54,14 +54,16 @@
                                        Margin="5 0 0 0">СУММА НА СЧЕТАХ:</TextBlock>
                             <TextBlock Foreground="White"
                                        FontSize="20"
-                                       Margin="5 0 0 0">??????</TextBlock>
+                                       Margin="5 0 0 0"
+                                       Text="{Binding Path=TotalSum}"></TextBlock>
 
 
                         </StackPanel>
 
                         <StackPanel>
                             <TextBlock Margin="5 0 0 0">Количество счетов:</TextBlock>
-                            <TextBlock Margin="5 0 0 0">??????</TextBlock>
+                            <TextBlock Margin="5 0 0 0"
+                                       Text="{Binding Path=TotalNumberOfCounts}"></TextBlock>
                         </StackPanel>
                     </StackPanel>
                 </Border>

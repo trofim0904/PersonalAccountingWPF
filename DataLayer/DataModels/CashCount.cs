@@ -19,6 +19,7 @@ namespace DataLayer.DataModels
 
         public User User { get; set; }
         public virtual List<CashCountAction> CashCountActions { get; set; } 
+        public virtual List<CashCountPeriodChange> CashCountPeriodChanges { get; set; }
 
     }
 }

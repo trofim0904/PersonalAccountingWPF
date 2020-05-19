@@ -55,6 +55,7 @@
     <Compile Include="DataModels\CashCount.cs" />
     <Compile Include="DataModels\CashCountAction.cs" />
     <Compile Include="DataModels\CashCountActionCategory.cs" />
+    <Compile Include="DataModels\CashCountPeriodChange.cs" />
     <Compile Include="DataModels\User.cs" />
     <Compile Include="GeneralRepository.cs" />
     <Compile Include="IRepository.cs" />
@@ -70,8 +71,20 @@
     <Compile Include="Migrations\202005052226223_add periodchanges field.designer.cs">
       <DependentUpon>202005052226223_add periodchanges field.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005191953571_Add new table - CashCountPeriodChange and add new field to table CashCountAction.cs" />
+    <Compile Include="Migrations\202005191953571_Add new table - CashCountPeriodChange and add new field to table CashCountAction.designer.cs">
+      <DependentUpon>202005191953571_Add new table - CashCountPeriodChange and add new field to table CashCountAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005191957583_update table - CashCountPeriodChange.cs" />
+    <Compile Include="Migrations\202005191957583_update table - CashCountPeriodChange.designer.cs">
+      <DependentUpon>202005191957583_update table - CashCountPeriodChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CashCountActionCategoryRepository\CashCountActionCategoryRepository.cs" />
+    <Compile Include="Repositories\CashCountActionCategoryRepository\ICashCountActionCategoryRepository.cs" />
+    <Compile Include="Repositories\CashCountPeriodChangeRepository\CashCountPeriodChangeRepository.cs" />
+    <Compile Include="Repositories\CashCountPeriodChangeRepository\ICashCountPeriodChangeRepository.cs" />
     <Compile Include="Repositories\CashCountRepository\CashCountRepository.cs" />
     <Compile Include="Repositories\CashCountRepository\ICashCountRepository.cs" />
     <Compile Include="Repositories\UserRepository\IUserRepository.cs" />
@@ -91,9 +104,14 @@
     <EmbeddedResource Include="Migrations\202005052226223_add periodchanges field.resx">
       <DependentUpon>202005052226223_add periodchanges field.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005191953571_Add new table - CashCountPeriodChange and add new field to table CashCountAction.resx">
+      <DependentUpon>202005191953571_Add new table - CashCountPeriodChange and add new field to table CashCountAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005191957583_update table - CashCountPeriodChange.resx">
+      <DependentUpon>202005191957583_update table - CashCountPeriodChange.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositories\CashCountActionCategoryRepository\" />
     <Folder Include="Repositories\CashCountActionRepository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

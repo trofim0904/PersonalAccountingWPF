@@ -5,13 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PersonalAccounting.View.Counts"
         mc:Ignorable="d"
-        Title="AllPeriodChangesWindow" Height="450" Width="800">
-    <Grid>
-        <ScrollViewer>
-            <StackPanel>
-                <ItemsControl ItemsSource="{Binding Path=PeriodChanges}">
-                </ItemsControl>
-            </StackPanel>
-        </ScrollViewer>
-    </Grid>
+        Title="AllPeriodChangesWindow" ResizeMode="NoResize"
+        WindowStyle="None"
+        x:Name="AllPeriodChangeW" 
+        Height="530" 
+        Width="350">
+    <Border BorderBrush="#2c3e50"
+            BorderThickness="4">
+        <Grid Background="#ecf0f1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="#2c3e50"
+                    BorderThickness="1">
+                <Grid Grid.Row="0">
+
+                    <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="15">
+                Периодические изменения
+                    </TextBlock>
+                    <Button Grid.Row="0" 
+                Style="{DynamicResource _imgbuttons}"
+                HorizontalAlignment="Right"
+                CommandParameter="{Binding ElementName=AllPeriodChangeW}"
+                Command="{Binding CloseCommand}">
+                        <Image Source="/Resources/close.png"
+                               Margin="5"/>
+                    </Button>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="1">
+                <ScrollViewer>
+                    <StackPanel>
+                        <ItemsControl ItemsSource="{Binding Path=PeriodChanges}">
+                        </ItemsControl>
+                    </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+        </Grid>
+    </Border>
 </Window>

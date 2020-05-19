@@ -14,6 +14,33 @@ namespace DataLayer.Repositories.CashCountRepository
             return context.CashCounts.Where(c => c.UserId == userid).ToList();
         }
 
+        public int GetTotalNumberOfCounts(int userid)
+        {
+            try
+            {
+                return context.CashCounts.Where(c => c.UserId == userid).Count();
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        public float GetTotalSumOfCounts(int userid)
+        {
+            float result = 0;
+            try
+            {
+                ICollection<CashCount> counts = context.CashCounts.Where(c => c.UserId == userid).ToList();
+                foreach (CashCount count in counts)
+                {
+                    result += count.AmountOfMoney;
+                }
+            }
+            catch { }
+            return result;
+        }
+
         public override void Update(CashCount item)
         {
             throw new NotImplementedException();

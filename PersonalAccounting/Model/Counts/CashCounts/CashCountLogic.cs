@@ -62,5 +62,23 @@ namespace PersonalAccounting.Model.Counts.CashCounts
             }
             return result;
         }
+        public int GetTotalNumberOfCounts()
+        {
+            int result;
+            using (CashCountRepository repository = new CashCountRepository())
+            {
+                result = repository.GetTotalNumberOfCounts(MyUser.UserId);
+            }
+            return result;
+        }
+        public float GetTotalSumOfCounts()
+        {
+            float result;
+            using (CashCountRepository repository = new CashCountRepository())
+            {
+                result = repository.GetTotalSumOfCounts(MyUser.UserId);
+            }
+            return result;
+        }
     }
 }

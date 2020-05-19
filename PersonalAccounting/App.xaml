@@ -14,6 +14,10 @@
             <countviews:AllCountsUC/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type countviewmodels:PeriodChangeInListVM}">
+            <countviews:PeriodChangeViewUC/>
+        </DataTemplate>
+
         <DataTemplate DataType="{x:Type countviewmodels:CreateNewCountVM}">
             <countviews:CreateNewCountUC/>
         </DataTemplate>
