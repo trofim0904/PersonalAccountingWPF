@@ -20,8 +20,8 @@ namespace PersonalAccounting.ViewModel.Counts
             }
 
         }
-        private ObservableCollection<ValutaType> _valutatypes;
-        public ObservableCollection<ValutaType> ValutaTypes
+        private ObservableCollection<ParameterType> _valutatypes;
+        public ObservableCollection<ParameterType> ValutaTypes
         {
             get => _valutatypes;
             set
@@ -80,6 +80,8 @@ namespace PersonalAccounting.ViewModel.Counts
         public ICommand SelectTypeCommand { get; private set; }
         public ICommand CreateNewCountCommand { get; private set; }
 
+        ParameterFactory parameterFactory = new ParameterFactory();
+
         public CreateNewCountVM()
         {
             InputParametrs = new InputCountParametrs();
@@ -88,8 +90,12 @@ namespace PersonalAccounting.ViewModel.Counts
             SecondPartOpacity = 0;
             
             Types = new ObservableCollection<CountType>(CountType.CountTypes);
-            ValutaTypes = new ObservableCollection<ValutaType>(ValutaType.ValutaTypes);
-            
+            ValutaTypes = new ObservableCollection<ParameterType>
+            {
+                parameterFactory.GetParameter("valuta_1"),
+                parameterFactory.GetParameter("valuta_2")
+            };
+
             CreateNewCountCommand = new DelegateCommand(CreateNewCount);
             SelectTypeCommand = new DelegateCommand(SelectType);
         }

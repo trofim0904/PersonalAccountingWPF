@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace PersonalAccounting.Model.Counts
 {
-    public class ValutaType : ParameterType
+    public abstract class ParameterType
     {
-        public ValutaType(int id, string name)
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        public override string ToString()
         {
-            Id = id;
-            Name = name;
+            return Name;
         }
+
+
     }
 }

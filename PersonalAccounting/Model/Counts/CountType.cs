@@ -11,6 +11,7 @@ namespace PersonalAccounting.Model.Counts
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
         public ISelectedCount SelectedCount { get; set; }
 
         public static readonly List<CountType> CountTypes = new List<CountType>()

@@ -98,6 +98,8 @@
     <Compile Include="Model\Counts\CreateCount\ISelectedCount.cs" />
     <Compile Include="Model\Counts\ModelsForList\CountViewInList.cs" />
     <Compile Include="Model\Counts\ModelsForList\CreditCountViewInList.cs" />
+    <Compile Include="Model\Counts\ParameterFactory.cs" />
+    <Compile Include="Model\Counts\ParameterType.cs" />
     <Compile Include="Model\Counts\ValutaType.cs" />
     <Compile Include="Model\Login\LoginLogic.cs" />
     <Compile Include="Model\Login\LoginModel.cs" />
