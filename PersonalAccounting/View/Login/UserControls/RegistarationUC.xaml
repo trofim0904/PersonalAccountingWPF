@@ -31,18 +31,20 @@
                 Margin="40 40 40 80"
                 FontSize="30">Регистрация</TextBlock>
             <TextBlock Style="{StaticResource _tb}">Имя:</TextBlock>
-            <TextBox Style="{StaticResource _tbox}"></TextBox>
+            <TextBox Style="{StaticResource _tbox}"
+                     Text="{Binding Path=RegistrationModel.Name}"></TextBox>
             <TextBlock Style="{StaticResource _tb}">Пароль:</TextBlock>
-            <TextBox Style="{StaticResource _tbox}"></TextBox>
+            <TextBox Style="{StaticResource _tbox}"
+                     Text="{Binding Path=RegistrationModel.Password}"></TextBox>
             <TextBlock Style="{StaticResource _tb}">Подтвердите пароль:</TextBlock>
-            <TextBox Style="{StaticResource _tbox}"></TextBox>
+            <TextBox Style="{StaticResource _tbox}"
+                     Text="{Binding Path=RegistrationModel.RepeatPassword}"></TextBox>
             
         </StackPanel>
-        <Button Background="#bdc3c7">
-            <TextBox FontSize="15"
-                     Background="#bdc3c7"
-                     BorderThickness="0"
-                     >Создать аккаунт</TextBox>
+        <Button Background="#bdc3c7"
+                Command="{Binding Path=RegistrationCommand}">
+            <TextBlock FontSize="15"
+                     >Создать аккаунт</TextBlock>
         </Button>
     </Grid>
 </UserControl>

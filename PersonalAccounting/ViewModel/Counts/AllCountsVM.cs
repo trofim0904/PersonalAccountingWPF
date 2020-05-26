@@ -37,6 +37,8 @@ namespace PersonalAccounting.ViewModel.Counts
 
 
 
+
+
             TotalSum = cashlogic.GetTotalSumOfCounts();
             TotalNumberOfCounts = cashlogic.GetTotalNumberOfCounts();
 

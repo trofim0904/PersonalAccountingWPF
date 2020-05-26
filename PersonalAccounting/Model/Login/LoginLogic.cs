@@ -11,6 +11,8 @@ namespace PersonalAccounting.Model.Login
 {
     public class LoginLogic
     {
+
+        AccountingService service;
         public bool LoginUser(LoginModel loginModel)
         {
             bool result;
@@ -26,6 +28,24 @@ namespace PersonalAccounting.Model.Login
                 else result = false;
             }
             return result;
+        }
+        public bool AddNewUser(RegistrationModel registrationModel)
+        {
+            service = new AccountingService();
+            if (!service.LoginAndPasswordVerification(registrationModel.Name, registrationModel.Password, registrationModel.RepeatPassword))
+            {
+                return false;
+            }
+            using (IUserRepository repository = new UserRepository())
+            {
+                repository.Create(new User()
+                {
+                    Name = registrationModel.Name,
+                    Password = registrationModel.Password
+                });
+                repository.Save();
+            }
+            return true;
         }
     }
 }
