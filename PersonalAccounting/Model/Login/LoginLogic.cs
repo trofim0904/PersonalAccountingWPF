@@ -1,10 +1,12 @@
 ﻿using DataLayer;
 using DataLayer.DataModels;
 using DataLayer.Repositories.UserRepository;
+using PersonalAccounting.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace PersonalAccounting.Model.Login
@@ -13,6 +15,7 @@ namespace PersonalAccounting.Model.Login
     {
 
         AccountingService service;
+        private bool resultOfVerification = false;
         public bool LoginUser(LoginModel loginModel)
         {
             bool result;
@@ -31,11 +34,15 @@ namespace PersonalAccounting.Model.Login
         }
         public bool AddNewUser(RegistrationModel registrationModel)
         {
-            service = new AccountingService();
-            if (!service.LoginAndPasswordVerification(registrationModel.Name, registrationModel.Password, registrationModel.RepeatPassword))
-            {
-                return false;
-            }
+            ///WCF
+            //service = new AccountingService();
+            //if (!service.LoginAndPasswordVerification(registrationModel.Name, registrationModel.Password, registrationModel.RepeatPassword))
+            //{
+            //    return false;
+            //}
+
+            
+
             using (IUserRepository repository = new UserRepository())
             {
                 repository.Create(new User()
@@ -47,5 +54,7 @@ namespace PersonalAccounting.Model.Login
             }
             return true;
         }
+     
+       
     }
 }

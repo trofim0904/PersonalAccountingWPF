@@ -1,4 +1,5 @@
 ﻿using PersonalAccounting.Model.Login;
+using PersonalAccounting.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,13 +36,23 @@ namespace PersonalAccounting.ViewModel.Login
             RegistrationCommand = new DelegateCommand(Registration);
         }
 
-        private void Registration(object obj)
+        private async void Registration(object obj)
         {
-            logic = new LoginLogic();
+            ApiHelper.InitializeClient();
 
-            if (!logic.AddNewUser(RegistrationModel))
+            bool correctdata = await VerificationProcessor.CheckRegistrationModel(RegistrationModel);
+            if (!correctdata)
             {
                 MessageBox.Show("Ошибка!");
+            }
+            else
+            {
+                logic = new LoginLogic();
+
+                if (!logic.AddNewUser(RegistrationModel))
+                {
+                    MessageBox.Show("Ошибка!");
+                }
             }
         }
 

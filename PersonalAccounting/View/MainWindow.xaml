@@ -16,7 +16,11 @@
     </Window.DataContext>
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
-        
+
+        <Style x:Key="_spweather" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
         <Style x:Key="_textmenu" TargetType="TextBlock">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Background" Value="#34495e"/>
@@ -130,6 +134,30 @@
                         </TextBlock.InputBindings>
                     </TextBlock>
                     
+                </StackPanel>
+                <StackPanel VerticalAlignment="Bottom"
+                            HorizontalAlignment="Left">
+                    <TextBlock Margin="5"
+                               FontSize="15">Погода</TextBlock>
+                    <StackPanel Style="{StaticResource _spweather}">
+                        <TextBlock Margin="0 0 5 0">Чувствуется:</TextBlock>
+                        <TextBlock FontWeight="Bold"
+                                   Text="{Binding Path=WeatherModel.Main.Feels_like}"></TextBlock>
+                        <TextBlock FontWeight="Bold">C</TextBlock>
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource _spweather}">
+                        <TextBlock Margin="0 0 5 0">Мин:</TextBlock>
+                        <TextBlock FontWeight="Bold"
+                                   Text="{Binding Path=WeatherModel.Main.Temp_max}"></TextBlock>
+                        <TextBlock FontWeight="Bold">C</TextBlock>
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource _spweather}">
+                        <TextBlock Margin="0 0 5 0">Макс:</TextBlock>
+                        <TextBlock FontWeight="Bold"
+                                   Text="{Binding Path=WeatherModel.Main.Temp_min}"></TextBlock>
+                        <TextBlock FontWeight="Bold">C</TextBlock>
+                        
+                    </StackPanel>
                 </StackPanel>
             </Grid>
             

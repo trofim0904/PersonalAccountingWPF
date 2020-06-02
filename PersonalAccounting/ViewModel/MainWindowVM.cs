@@ -1,4 +1,5 @@
 ﻿using PersonalAccounting.Model.WindowState;
+using PersonalAccounting.Services;
 using PersonalAccounting.ViewModel.Counts;
 using System;
 using System.ComponentModel;
@@ -62,15 +63,31 @@ namespace PersonalAccounting.ViewModel
             }
         }
 
+        private WeatherModel _weatherModel;
+        public WeatherModel WeatherModel
+        {
+            get => _weatherModel;
+            set
+            {
+                _weatherModel = value;
+                OnPropertyChanged("WeatherModel");
+            }
+        }
+
+        private WeatherProcessor weatherProcessor;
         private WindowContext _windowContext;
 
         public MainWindowVM()
         {
+
             SelectedViewModel = new AllCountsVM();
 
             CancelButtonVisibility = 0;
 
-
+            ApiHelper.InitializeClient();
+            weatherProcessor = new WeatherProcessor();
+            GetWeather();
+            
             _windowContext = new WindowContext(new UnLockWindow());
             SetWindowState();
 
@@ -79,6 +96,11 @@ namespace PersonalAccounting.ViewModel
             BackToAllCountsCommand = new DelegateCommand(BackToAllCounts);
             CloseAppCommand = new DelegateCommand(CloseApp);
             LockWindowCommand = new DelegateCommand(LockWindow);
+        }
+
+        private async void GetWeather()
+        {
+            WeatherModel = await weatherProcessor.LoadWeather();   
         }
 
         private void LockWindow(object obj)
